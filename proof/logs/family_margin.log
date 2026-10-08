@@ -1,0 +1,4 @@
+family members tested: 2444  margin min/max: -1.110e-16 5.686e-16
+perturbed: min margin per eps: [5.87027788e-03 4.91193075e-04 4.89192207e-05 4.88996777e-06]
+ratio margin/eps (min over trials): [0.05870278 0.04911931 0.04891922 0.04889968]
+trials with negative margin: 0

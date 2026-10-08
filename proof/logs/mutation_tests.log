@@ -1,0 +1,25 @@
+(a1) vertex witness k -> k+1 on 300 boxes                                   rows rejected: 297/300  | verifier: verified boxes: 53093, failures: 297, time 27s
+(a2) edge witness t -> t+1/2 mod 1 on 300 boxes                             rows rejected: 298/300  | verifier: verified boxes: 53093, failures: 298, time 25s
+(a2') edge witness t -> t+2^-12 on 300 boxes [expected: mostly still valid] rows rejected: 0/300    | verifier: verified boxes: 53093, failures: 0, time 26s
+(a3) 300 A boxes relabelled B                                               rows rejected: 281/300  | verifier: verified boxes: 53093, failures: 281, time 26s
+(a4) 300 A boxes relabelled C                                               rows rejected: 298/300  | verifier: verified boxes: 53093, failures: 298, time 26s
+(a5) 300 B boxes relabelled C                                               rows rejected: 290/300  | verifier: verified boxes: 53093, failures: 290, time 25s
+(a6) 300 C boxes relabelled B                                               rows rejected: 300/300  | verifier: verified boxes: 53093, failures: 300, time 24s
+(a7) all L1 boxes relabelled L2                                             rows rejected: 28/28    | verifier: verified boxes: 53093, failures: 28, time 25s
+(a8) 300 A boxes relabelled vertex k=1                                      rows rejected: 300/300  | verifier: verified boxes: 53093, failures: 300, time 25s
+(a9) 300 discard reasons changed                                            rows rejected: 293/300  | verifier: verified boxes: 53093, failures: 293, time 24s
+(a10) 300 vertex-witness boxes declared discarded                           rows rejected: 300/300  | verifier: verified boxes: 53093, failures: 300, time 25s
+(c1) delete one vertex-witness box                                          rows rejected: -        | verifier: AssertionError: replay went too deep: boxes do not tile
+(c2) delete one discarded box                                               rows rejected: -        | verifier: AssertionError: replay went too deep: boxes do not tile
+(c3) duplicate one A box                                                    rows rejected: -        | verifier: AssertionError: duplicate boxes
+(c4) replace one C box by its lower half                                    rows rejected: -        | verifier: AssertionError: replay went too deep: boxes do not tile
+(b1) A constants: sign flipped                                              rows rejected: -        | verifier: verified boxes: 53093, failures: 77, time 24s
+(b2) A constants: all zero                                                  rows rejected: -        | verifier: verified boxes: 53093, failures: 85, time 24s
+(b3) A constants: shifted by one index                                      rows rejected: -        | verifier: verified boxes: 53093, failures: 75, time 24s
+(b4) B constants: sign flipped                                              rows rejected: -        | verifier: verified boxes: 53093, failures: 0, time 24s
+(b5) B constants: all zero                                                  rows rejected: -        | verifier: verified boxes: 53093, failures: 0, time 25s
+(b6) C constants: sign flipped                                              rows rejected: -        | verifier: verified boxes: 53093, failures: 0, time 25s
+(b7) C constants: all zero                                                  rows rejected: -        | verifier: verified boxes: 53093, failures: 0, time 25s
+(b8) A checks j=k+2 instead of k+3                                          rows rejected: -        | verifier: verified boxes: 53093, failures: 3644, time 24s
+(b9) B checks the other triangle                                            rows rejected: -        | verifier: verified boxes: 53093, failures: 439, time 24s
+(b10) candidate sets always empty                                           rows rejected: -        | verifier: verified boxes: 53093, failures: 5771, time 23s

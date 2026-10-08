@@ -1,0 +1,5 @@
+enclosure self-test: True
+python-flint 0.9.0  precision 96 bits
+boxes: 53093  exact volume equal to initial box: True
+tiling replay: leaves used 53093 of 53093 -> True
+verified boxes: 53093, failures: 0, time 27s

@@ -1,0 +1,4 @@
+independent tiling: boxes 53093, exact volume ok True, replay used 53093 of 53093
+independent verification: unresolved boxes 0 (MAXD=12), time 169s
+accept stats (reason@depth): {'any@0': 633, 'any@1': 242, 'any@2': 325, 'any@3': 118, 'any@4': 12, 'any@5': 7, 'inf@0': 14717, 'inf@1': 3450, 'inf@2': 1236, 'inf@3': 1015, 'inf@4': 322, 'inf@5': 68, 'inf@6': 47, 'inf@7': 6, 'rec@0': 35179, 'rec@1': 304, 'rec@2': 27, 'rec@3': 27}
+exit 0
