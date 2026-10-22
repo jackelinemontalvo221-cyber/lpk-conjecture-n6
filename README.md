@@ -12,13 +12,13 @@ This is the case $n=6$ of Conjecture 2 of Levick, Pereira and Kribs ([Proc. AMS 
 
 ## Outline of the proof
 
-Let $Av=\lambda v$ with $\mathrm{Im}\,\lambda>0$ and $v$ convexly independent. Then $\sum_i v_i=0$, and $\lambda K_m(v)\subseteq K_m(v)$ for every $m$, where $K_m(v)$ is the convex hull of all sums of $m$ entries of $v$ with distinct indices. The proof splits according to $\arg\lambda$.
+Let $Av=\lambda v$ with $\mathrm{Im}(\lambda)>0$ and $v$ convexly independent. Then $\sum_i v_i=0$, and $\lambda K_m(v)\subseteq K_m(v)$ for every $m$, where $K_m(v)$ is the convex hull of all sums of $m$ entries of $v$ with distinct indices. The proof splits according to $\arg\lambda$.
 
 | sector | argument |
 |---|---|
 | $0<\arg\lambda\le\pi/3$ | classical sector bound of Dmitriev–Dynkin for stochastic matrices |
 | $2\pi/3\le\arg\lambda<\pi$ | $K_3(v)$ is a centrally symmetric hexagon, so $\lambda$ is an eigenvalue of a real $3\times 3$ matrix with column $\ell^1$-norms $\le 1$; such eigenvalues lie in the Karpelevič region $\Theta_6$, and the sector bound applied to $-\bar\lambda$ finishes |
-| $\pi/3<\arg\lambda<2\pi/3$ | $H=K_2(v)$ is a hexagon with vertices $s_j=v_j+v_{j+1}$, made of two interleaved triangles with centroid $0$. **Proposition P90:** every such hexagon has a boundary point $x$ with $\mathrm{Im}(s_j/x)\le\sqrt3/2$ for all $j$. Since $\lambda x\in H$, this gives $\mathrm{Im}\,\lambda\le\sqrt3/2$ |
+| $\pi/3<\arg\lambda<2\pi/3$ | $H=K_2(v)$ is a hexagon with vertices $s_j=v_j+v_{j+1}$, made of two interleaved triangles with centroid $0$. **Proposition P90:** every such hexagon has a boundary point $x$ with $\mathrm{Im}(s_j/x)\le\sqrt3/2$ for all $j$. Since $\lambda x\in H$, this gives $\mathrm{Im}(\lambda)\le\sqrt3/2$ |
 
 Proposition P90 has zero margin along a whole two-parameter family of hexagons (those invariant under rotation by $120^\circ$), so it cannot be checked by bounding its margin directly. The proof uses three exact "potential" lemmas, each of which turns a vertex into a witness provided one remaining inequality holds, and a branch-and-bound computation over a compact 6-dimensional parameter space. All 53,093 boxes of the resulting cover are re-verified in ball arithmetic (Arb, via python-flint).
 
@@ -79,13 +79,13 @@ python3 -c "import numpy as np; a=np.load('cover.npz'); b=np.load('cover_new.npz
 
 ## Format of `cover.npz`
 
-Parameters are $p=(\mathrm{Re}\,s_2,\mathrm{Im}\,s_2,\mathrm{Re}\,s_3,\mathrm{Im}\,s_3,\mathrm{Re}\,s_4,\mathrm{Im}\,s_4)$, with $s_1=1$, $s_5=-1-s_3$, $s_6=-s_2-s_4$. A box is stored by its centre $m$ and half-widths $h$ (exact binary floating-point numbers).
+Parameters are $p=(\mathrm{Re}(s_2),\mathrm{Im}(s_2),\mathrm{Re}(s_3),\mathrm{Im}(s_3),\mathrm{Re}(s_4),\mathrm{Im}(s_4))$, with $s_1=1$, $s_5=-1-s_3$, $s_6=-s_2-s_4$. A box is stored by its centre $m$ and half-widths $h$ (exact binary floating-point numbers).
 
 | array | rows | meaning |
 |---|---|---|
 | `lo0`, `hi0` | – | the initial box $[-1,1]\times[0,1]\times[-1,0]\times[0,7/8]\times[-1,1]^2$ |
 | `cert0` | `[m(6), h(6), k, 0]` | vertex witness $s_{k+1}$ |
-| `cert6` | `[m(6), h(6), k, t]` | edge witness $(1-t)s_{k+1}+t\,s_{k+2}$, $t\in 2^{-12}\mathbb Z$ |
+| `cert6` | `[m(6), h(6), k, t]` | edge witness $(1-t)s_{k+1}+t s_{k+2}$, $t\in 2^{-12}\mathbb Z$ |
 | `cert1`, `cert2`, `cert3` | `[m(6), h(6), -1, 0]` | potential certificates A, B, C |
 | `cert4`, `cert5` | `[m(6), h(6), -1, 0]` | largest-vertex certificates L1 (triangle $s_1s_3s_5$), L2 (triangle $s_2s_4s_6$) |
 | `infeasible` | `[m(6), h(6), reason]` | box contains no admissible hexagon; reason `0–5`: $\lvert s_{k+1}\rvert^2>1$, `10–15`: a right turn, `20–25`: $\mathrm{cr}(s_{k+1},s_{k+2})<0$, `100+i`: a vertex on the wrong side of an edge, `200`: total angle exceeds $2\pi$ |
