@@ -8,7 +8,7 @@
 \usepackage{xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!50!black]{hyperref}
 
-\newcommand{\repourl}{https://github.com/wojiaozhujiejie/lpk-conjecture-n6}
+\newcommand{\repourl}{https://github.com/jackelinemontalvo221-cyber/lpk-conjecture-n6}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
@@ -75,7 +75,7 @@ If $\lambda\in\omega_6\setminus\PM_6$, then no left or right eigenvector of any 
 \end{corollary}
 
 \subsection*{Relation to the work of Bouthat, Mashreghi and Morneau-Guérin}
-In two talks given in May 2026 \cite{Bou26,BMM26} (see also the poster \cite{BMM25}), Bouthat, Mashreghi and Morneau-Guérin announced a theorem stating that, for every $n$, an eigenvalue of an $n\times n$ doubly stochastic matrix with a convexly independent eigenvector lies in $\Pi_n$. Theorem~\ref{thm:main} is therefore the case $n=6$ of their announced result. To our knowledge their paper is not yet publicly available. As far as we can tell from the slides, their approach considers, in each direction, an eigenpair of maximal modulus with a convexly independent eigenvector $z$, and aims to show that the vector of midpoints $\bigl(\frac{z_1+z_2}{2},\dots,\frac{z_n+z_1}{2}\bigr)$ is again a maximal eigenvector; iterating, one reaches affinely regular polygons, on which $\lvert\lambda\rvert$ can be maximized directly. In the slides this maximality-preservation step is labelled as a conjecture. The proof given here follows a different route and does not depend on that step. It is specific to $n=6$, it uses only $\sum_iv_i=0$ and the inclusions $\lambda K_m(v)\subseteq K_m(v)$ for $m=1,2,3$, where $K_m(v)$ is the convex hull of the sums of $m$ entries of $v$ with distinct indices (Section~\ref{sec:prelim}), and part of it is computer-assisted.
+In two talks given in May 2026 \cite{Bou26,BMM26} (see also the poster \cite{BMM25}), Bouthat, Mashreghi and Morneau-Guérin announced a theorem stating that, for every $n$, an eigenvalue of an $n\times n$ doubly stochastic matrix with a convexly independent eigenvector lies in $\Pi_n$. Theorem~\ref{thm:main} is therefore the case $n=6$ of their announced result. To our knowledge their paper is not yet publicly available. As far as we can tell from the slides, their approach considers, in each direction, an eigenpair of maximal modulus with a convexly independent eigenvector $z$, and aims to show that the vector of midpoints $\bigl(\frac{z_1+z_2}{2},\dots,\frac{z_n+z_1}{2}\bigr)$ is again a maximal eigenvector; iterating, one reaches affinely regular polygons, on which $\lvert\lambda\rvert$ can be maximized directly. This maximality-preservation step is labelled as a conjecture in the slides of the ILAS talk \cite{BMM26} and in one version of the Delaware slides \cite{Bou26}; another version of the Delaware slides, the file currently attached to the r-libre record of that talk \cite{Bou26b}, labels it a proposition, without proof. We have not seen a written proof of this step. The proof given here follows a different route and does not depend on that step. It is specific to $n=6$, it uses only $\sum_iv_i=0$ and the inclusions $\lambda K_m(v)\subseteq K_m(v)$ for $m=1,2,3$, where $K_m(v)$ is the convex hull of the sums of $m$ entries of $v$ with distinct indices (Section~\ref{sec:prelim}), and part of it is computer-assisted.
 
 \subsection*{Outline of the proof}
 Let $Av=\lambda v$ with $\lambda\notin\R$, $\operatorname{Im}\lambda>0$, and assume that the entries of $v$ are convexly independent. For $1\le m\le 5$ let $K_m(v)$ be the convex hull of the sums $\sum_{i\in S}v_i$ over all $m$-element sets $S\subseteq\{1,\dots,6\}$. Then $\sum_iv_i=0$ and $\lambda K_m(v)\subseteq K_m(v)$ for every $m$ (Lemma~\ref{lem:Km}). We distinguish three sectors (Figure~\ref{fig:overview}).
@@ -482,6 +482,9 @@ L.~Bouthat, J.~Mashreghi and F.~Morneau-Guérin, \emph{New results on the doubly
 
 \bibitem{Bou26}
 L.~Bouthat, J.~Mashreghi and F.~Morneau-Guérin, \emph{Toward a solution to a conjecture on doubly stochastic eigenvalues}, slides of a talk by L.~Bouthat at the Analysis Seminar, University of Delaware, May 15, 2026 (announced as ``A complete solution to a conjecture on doubly stochastic eigenvalues''). \url{https://r-libre.teluq.ca/4086/1/Beamer_Delaware.pdf}
+
+\bibitem{Bou26b}
+L.~Bouthat, J.~Mashreghi and F.~Morneau-Guérin, \emph{A complete solution to a conjecture on doubly stochastic eigenvalues}, another version of the slides of the talk \cite{Bou26}; file attached to the r-libre record deposited on May 25, 2026. \url{https://r-libre.teluq.ca/4086/}
 
 \bibitem{DD45}
 N.~Dmitriev and E.~Dynkin, \emph{On the characteristic numbers of a stochastic matrix}, C.~R. (Doklady) Acad. Sci. URSS (N.S.) \textbf{49} (1945), 159--162.
